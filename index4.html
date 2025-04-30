@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bhumika Kumari Singh</title>
+  <style>
+    :root {
+      --bg: #0d0c1d;
+      --text: #ffffff;
+      --primary: #bb86fc;
+      --secondary: #1e1e3f;
+      --card: #292c3e;
+      --link: #4fd1c5;
+    }
+
+    [data-theme="light"] {
+      --bg: #ffffff;
+      --text: #0d0c1d;
+      --primary: #6a1b9a;
+      --secondary: #e0e0f8;
+      --card: #f3f3fb;
+      --link: #1e88e5;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      background-color: var(--secondary);
+      padding: 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    nav h1 {
+      font-size: 2rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--text);
+    }
+
+    .toggle-theme {
+      cursor: pointer;
+      background: none;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      will-change: transform, opacity;
+      padding: 20px 20px;
+      max-width: 1000px;
+      margin: 20px auto;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-top.visible {
+      animation: fadeTop 1s forwards;
+    }
+
+    .slide-left.visible {
+      animation: slideLeft 1s forwards;
+    }
+
+    .slide-right.visible {
+      animation: slideRight 1s forwards;
+    }
+
+    .fade-bottom.visible {
+      animation: fadeBottom 1s forwards;
+    }
+
+    @keyframes fadeTop {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeBottom {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    section h2 {
+      color: var(--primary);
+      margin-bottom: 20px;
+      border-bottom: 1px solid #555;
+      padding-bottom: 5px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .link {
+      color: var(--link);
+    }
+
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--card);
+      padding: 6px 12px;
+      border-radius: 20px;
+    }
+
+    .skill-item img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.2rem;
+    }
+
+    .profile-pic {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-top: 20px;
+    }
+
+    footer {
+      background-color: var(--secondary);
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <h1>Bhumika's Portfolio</h1>
+      <ul>
+        <li><a href="#About">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="Bhumika_Resume.pdf" download>Resume</a></li>
+      </ul>
+      <button class="toggle-theme" onclick="toggleTheme()">Toggle Theme</button>
+    </nav>
+  </header>
+
+  <section class="hero fade-top">
+    <h1>Hi, I’m Bhumika Kumari Singh</h1>
+    <p>Geomatics Engineering undergraduate at Kathmandu University, passionate about mapping, exploring, and tech-driven solutions.</p>
+    <img src="bhumika.png.jpg" alt="Bhumika's Profile Photo" class="profile-pic">
+  </section>
+
+  <section id="About" class="slide-left">
+    <h2>About Me</h2>
+    <p>
+      I’m an undergraduate student of Geomatics Engineering at Kathmandu University with a strong curiosity for learning new and emerging technologies.
+      I am an organized, efficient, and hardworking individual who believes in continuous growth through practical learning.
+    </p>
+    <p>
+      I’m a good listener, a dedicated learner, and someone who enjoys turning challenges into opportunities.
+      Outside of academics, I love <strong>traveling</strong>, <strong>reading</strong>, <strong>exploring</strong>, and <strong>mapping</strong> the world around me.
+    </p>
+  </section>
+
+  <section id="education" class="slide-right">
+    <h2>Education</h2>
+    <ul>
+      <li><strong>Kathmandu University, Dhulikhel</strong> – Bachelor in Geomatics Engineering (2021 – Ongoing)</li>
+      <li><strong>Nepal Police School, Sanga</strong> – +2 Science (2019–2021) – GPA: 3.56</li>
+      <li><strong>Shree Janata Secondary School, Bardibas</strong> – SLC (2018) – GPA: 3.5</li>
+    </ul>
+  </section>
+
+  <section id="experience" class="fade-bottom">
+    <h2>Experience</h2>
+    <ul>
+      <li>Cadastral Surveying and Mapping</li>
+      <li>Remote Sensing & GIS</li>
+      <li>Total Station Operation</li>
+      <li>Topographical Mapping</li>
+      <li>GIS Mapping Trainings</li>
+      <li>ESRI Mock Tests (GIS for Climate Action, GeoApps)</li>
+      <li>Web Development (HTML, CSS, JavaScript – Codecademy)</li>
+    </ul>
+  </section>
+
+  <section id="projects" class="slide-left">
+    <h2>Projects</h2>
+    <ul>
+      <div class="project">
+        <h3>3D Modeling of Panauti Hydropower</h3>
+        <p>Developed a 3D model of the Panauti Hydropower project to assist in visualizing infrastructure.</p>
+      </div>
+
+      <div class="project">
+        <h3>GIS-Based Routing of Transmission Line</h3>
+        <p>Implemented Least Cost Path Method for routing a transmission line from Dhalkebar Power Station to Bardibas.</p>
+      </div>
+
+      <div class="project">
+        <h3>Groundwater Potential Analysis</h3>
+        <p>Conducted analysis using GIS tools to evaluate groundwater viability for agriculture and domestic use.</p>
+      </div>
+
+      <div class="project">
+        <h3>Direction Angle Transformer & Visualization Panel</h3>
+        <p>Developed using Java to analyze directional data and angles in geographical contexts.</p>
+      </div>
+    </ul>
+  </section>
+
+  <section id="skills" class="slide-right">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div class="skill-item"><img src="https://img.icons8.com/color/48/html-5.png" alt="HTML">HTML</div>
+      <div class="skill-item"><img src="https://img.icons8.com/color/48/css3.png" alt="CSS">CSS</div>
+      <div class="skill-item"><img src="https://img.icons8.com/color/48/javascript.png" alt="JavaScript">JavaScript</div>
+      <div class="skill-item"><img src="https://img.icons8.com/color/48/python--v1.png" alt="Python">Python</div>
+      <div class="skill-item"><img src="https://img.icons8.com/color/48/c-programming.png" alt="C">C</div>
+      <div class="skill-item"><img src="https://img.icons8.com/color/48/c-plus-plus-logo.png" alt="C++">C++</div>
+      <div class="skill-item"><img src="https://img.icons8.com/color/48/java-coffee-cup-logo.png" alt="Java">Java</div>
+      <div class="skill-item"><img src="matlab.png.jpeg" alt="MATLAB">MATLAB</div>
+      <div class="skill-item"><img src="postgis.png.jpeg" alt="PostGIS">PostGIS</div>
+      <div class="skill-item"><img src="arcgis.png.jpeg" alt="ArcGIS">ArcGIS</div>
+      <div class="skill-item"><img src="qgis.png.jpg" alt="QGIS">QGIS</div>
+      <div class="skill-item"><img src="autocad.png.jpeg" alt="AutoCAD">AutoCAD</div>
+    </div>
+  </section>
+
+  <section id="contact" class="fade-bottom">
+    <h2>Contact</h2>
+    <p>Email: <a class="link" href="mailto:imbhumeeka@gmail.com">imbhumeeka@gmail.com</a></p>
+    <p>KU Email: <a class="link" href="mailto:bs50071321@student.ku.edu.np">bs50071321@student.ku.edu.np</a></p>
+    <p>LinkedIn: <a class="link" href="https://www.linkedin.com/in/bhumika-kumari-singh-969376311" target="_blank">Bhumika Kumari Singh</a></p>
+    <p>Download my resume: <a class="link" href="Bhumika_Resume.pdf" download>Click here</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Bhumika Kumari Singh. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll("section");
+    const reveal = () => {
+      const triggerBottom = window.innerHeight * 0.9;
+      sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < triggerBottom) {
+          section.classList.add("visible");
+        }
+      });
+    };
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute("data-theme");
+      const newTheme = current === "light" ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+    }
+
+    window.addEventListener("scroll", reveal);
+    window.addEventListener("load", () => {
+      const savedTheme = localStorage.getItem("theme") || "dark";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+      reveal();
+    });
+  </script>
+</body>
+
+</html>
